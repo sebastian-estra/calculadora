@@ -1,0 +1,163 @@
+/* Tema oscuro por defecto */
+body.dark {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.light {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: #222;
+}
+
+/* === Centramos la calculadora === */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  /* Centrar horizontal */
+    align-items: center;      /* Centrar vertical */
+    overflow: auto;
+}
+
+/* Contenedor calculadora */
+.calculator {
+    background: #22223b;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 32px 24px 24px 24px;
+    width: 340px;
+    max-width: 95vw;   /* ✅ nunca se sale de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.5s, color 0.5s;
+    z-index: 10; /* que quede sobre los fuegos artificiales */
+}
+
+body.light .calculator {
+    background: #fff;
+    color: #222;
+}
+
+/* Display */
+.display {
+    background: #4a4e69;
+    color: #f2e9e4;
+    font-size: 2.5rem;
+    border-radius: 12px;
+    padding: 18px 16px;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 24px;
+    min-height: 48px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    overflow-x: auto;
+}
+
+body.light .display {
+    background: #e0e0e0;
+    color: #222;
+}
+
+/* Botones */
+.buttons { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ✅ ahora se adapta */
+    gap: 14px;
+    width: 100%;
+}
+
+.btn {
+    background: #9a8c98;
+    color: #22223b;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Operadores */
+.btn.operator {
+    background: #c9ada7;
+    font-weight: bold;
+}
+
+/* Igual */
+.btn.equal {
+    background: #f2e9e4;
+    font-weight: bold;
+}
+
+/* Clear */
+.btn.clear {
+    background: #e07a5f;
+    color: #fff;
+    font-weight: bold;
+    grid-column: span 4;
+}
+
+/* Científicos */
+.btn.sci {
+    background: #6a994e;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Enlaces */
+.btn.link {
+    background: #3a86ff;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Botón de tema */
+.btn.theme-btn {
+    background: #ff9800;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Animación salto */
+@keyframes bounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    50% { transform: scale(0.9); }
+    70% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn.clicked {
+    animation: bounce 0.3s ease;
+}
+
+/* Fuegos artificiales */
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* ✅ Responsivo para pantallas pequeñas */
+@media (max-width: 400px) {
+    .display {
+        font-size: 2rem;
+        padding: 14px 12px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 14px 0;
+    }
+}

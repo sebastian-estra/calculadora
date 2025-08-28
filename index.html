@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Musical</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <script defer src="js/index.js"></script>
+</head>
+
+<body class="dark">
+  <canvas id="fireworks"></canvas>
+
+  <!-- Calculadora -->
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+
+    <div class="buttons">
+      <!-- Botones numéricos -->
+      <button class="btn" data-value="7" data-song="822430__sinny__hair-scissors-03.mp3">7</button>
+      <button class="btn" data-value="8" data-song="822430__sinny__hair-scissors-03.mp3">8</button>
+      <button class="btn" data-value="9" data-song="822430__sinny__hair-scissors-03.mp3">9</button>
+      <button class="btn operator" data-value="/" data-song="822426__sinny__garden-shears-01.mp3">÷</button>
+
+      <button class="btn" data-value="4" data-song="822430__sinny__hair-scissors-03.mp3">4</button>
+      <button class="btn" data-value="5" data-song="822430__sinny__hair-scissors-03.mp3">5</button>
+      <button class="btn" data-value="6" data-song="822430__sinny__hair-scissors-03.mp3">6</button>
+      <button class="btn operator" data-value="*" data-song="822426__sinny__garden-shears-01.mp3">×</button>
+
+      <button class="btn" data-value="1" data-song="822430__sinny__hair-scissors-03.mp3">1</button>
+      <button class="btn" data-value="2" data-song="822430__sinny__hair-scissors-03.mp3">2</button>
+      <button class="btn" data-value="3" data-song="822430__sinny__hair-scissors-03.mp3">3</button>
+      <button class="btn operator" data-value="-" data-song="822426__sinny__garden-shears-01.mp3">−</button>
+
+      <button class="btn" data-value="0" data-song="822430__sinny__hair-scissors-03.mp3">0</button>
+      <button class="btn" data-value="." data-song="822426__sinny__garden-shears-01.mp3">.</button>
+
+      <!-- Botón igual (calcula y pone música) -->
+      <button class="btn equal" id="equals" data-song="Alan Walker Dua Lipa Coldplay Martin Garrix  The Chainsmokers Style 🌊 Summer Mix.webm">=</button>
+
+      <button class="btn operator" data-value="+" data-song="822426__sinny__garden-shears-01.mp3">+</button>
+
+      <!-- Botón clear (limpia y pone música) -->
+      <button class="btn clear" id="clear" data-song="Super Jon-Z (Residente Challenge).webm">C</button>
+
+      <!-- Botones científicos -->
+      <button class="btn sci" data-func="sin" data-song="822426__sinny__garden-shears-01.mp3">sin</button>
+      <button class="btn sci" data-func="cos" data-song="822426__sinny__garden-shears-01.mp3">cos</button>
+      <button class="btn sci" data-func="tan" data-song="822426__sinny__garden-shears-01.mp3">tan</button>
+      <button class="btn sci" data-func="sqrt" data-song="822426__sinny__garden-shears-01.mp3">√</button>
+
+      <!-- Botones de enlaces -->
+      <button class="btn link" onclick="window.open('https://github.com','_blank')">G</button>
+      <button class="btn link" onclick="window.open('https://wa.me/573103634938','_blank')">W</button>
+      <button class="btn link" onclick="window.open('https://login.microsoftonline.com/common/login')">M</button>
+
+      <!-- Botón de tema -->
+      <button class="btn theme-btn" onclick="toggleTheme()" data-song="822426__sinny__garden-shears-01.mp3">🌞/🌙</button>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio oculto -->
+  <audio id="player" hidden></audio>
+
+</body>
+</html>
